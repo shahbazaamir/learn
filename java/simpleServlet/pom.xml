@@ -1,0 +1,30 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>myApp</groupId>
+	 <artifactId>simpleServlet</artifactId>
+	 <packaging>war</packaging>
+	  <version>1</version>
+	  <properties>
+	<jdk.version>1.8</jdk.version>
+	
+	<servletapi.version>3.1.0</servletapi.version>
+
+  </properties>
+	  <!--
+	<build>
+		<directory>target</directory>
+		<outputDirectory>target/classes</outputDirectory>
+		<finalName>${artifactId}-${version}</finalName>
+	</build>
+	-->
+	<dependencies>
+	<!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>javax.servlet-api</artifactId>
+		<version>${servletapi.version}</version>
+		<scope>provided</scope>
+	</dependency>
+
+</dependencies>
+</project>

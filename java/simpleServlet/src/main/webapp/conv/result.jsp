@@ -1,0 +1,1 @@
+<h3>Result is :<%=(String)request.getAttribute("celcius")%></h3>
