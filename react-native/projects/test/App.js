@@ -13,8 +13,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.paragraph}>
-          Change code in the editor and watch it change on your phone!
-          Save to get a shareable url.
+          This is my app.
         </Text>
         <Card title="Local Modules">
           <AssetExample />
