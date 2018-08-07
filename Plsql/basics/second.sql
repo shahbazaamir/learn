@@ -10,4 +10,6 @@ DBMS_OUTPUT.PUT_LINE('The current date '||V_CURR_DATE);
 EXCEPTION
 WHEN OTHERS THEN
 DBMS_OUTPUT.PUT_LINE(DBMS_UTILITY.FORMAT_ERROR_BACKTRACE);
+DBMS_OUTPUT.PUT_LINE('Line number is :'|| $$plsql_line ' and unit '|| $$plsql_unit);
+
 END;
