@@ -16,6 +16,7 @@ public class DatabaseHelper {
 				.build();
 		try {
 			sessionFactory = new MetadataSources( registry ).buildMetadata().buildSessionFactory();
+			DBLogWrapper.debug("sessionFactory  success");
 		}
 		catch (Exception e) {
 			// The registry would be destroyed by the SessionFactory, but we had trouble building the SessionFactory

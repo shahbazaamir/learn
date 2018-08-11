@@ -10,7 +10,7 @@
 	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
    
-    <bean id="orderService" class="org.order.service.OrderService">
+    <bean id="orderServiceImpl1" class="org.order.serviceimpl1.OrderServiceImpl1">
    </bean>
 	
 	<aop:aspectj-autoproxy />

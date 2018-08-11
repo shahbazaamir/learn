@@ -1,11 +1,14 @@
 package org.simpleSpring.bean;
 
+import org.simpleSpring.log.LogWrapper;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class BeanFactory {
 	
 	public static Object getBean(String beanId){
+		LogWrapper.debug("beanId is");
+		LogWrapper.debug(beanId);
 		return getApplicationContext(beanId);
 	}
 	private static ConfigurableApplicationContext context;

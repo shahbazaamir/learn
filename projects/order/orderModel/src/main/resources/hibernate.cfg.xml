@@ -35,7 +35,7 @@
         <property name="hbm2ddl.auto">create</property>  -->
 
         <!-- Names the annotated entity class -->
-        <mapping class="test.order.Order"/>
+        <mapping class="org.order.Order"/>
 
     </session-factory>
 

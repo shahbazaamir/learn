@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.order.service.OrderDetails;
 import org.order.service.OrderService;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 import org.order.Order;
 import org.order.OrderDao;
 
@@ -11,7 +13,7 @@ import org.order.OrderDao;
 
 
 
-
+@Service
 public class OrderServiceImpl1 implements OrderService {
 
 	@Override

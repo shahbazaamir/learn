@@ -20,7 +20,7 @@ public class FactoryConstants {
 		}
 	}
 	
-	public static final String ORDER_SERVICE=getProp("orderService");
+	public static final String ORDER_SERVICE="orderServiceImpl1";//getProp("ORDER_SERVICE");
 	
 	private static String getProp(String key) {
 		return factory.getProperty(key);
