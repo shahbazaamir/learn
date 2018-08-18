@@ -26,4 +26,11 @@ public class OrderServiceImpl1 implements OrderService {
 		return orderDetails;
 	}
 
+	@Override
+	public OrderDetails saveOrder(OrderDetails orderDetails) {
+		OrderDao orderDao=new OrderDao();
+		orderDao.addOrder( orderDetails.getId() ,orderDetails.getScripName(), orderDetails.getPrice(), orderDetails.getQuantity(),orderDetails.getType());
+		return orderDetails;
+	}
+
 }
