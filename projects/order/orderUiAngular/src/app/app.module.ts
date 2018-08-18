@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import {Routes,RouterModule} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ScripComponent } from './scrip/scrip.component';
@@ -10,6 +12,13 @@ import { QuantityComponent } from './order/quantity/quantity.component';
 import { TypeComponent } from './order/type/type.component';
 import { PriceComponent } from './order/price/price.component';
 import { IdComponent } from './order/id/id.component';
+import { OrderPageComponent } from './order-page/order-page.component';
+import { OrderServiceService } from './order-service.service';
+
+
+const appRoutes:Routes =[
+{path:'order',component: OrderPageComponent}]
+
 
 @NgModule({
   declarations: [
@@ -21,12 +30,15 @@ import { IdComponent } from './order/id/id.component';
     QuantityComponent,
     TypeComponent,
     PriceComponent,
-    IdComponent
+    IdComponent,
+	OrderPageComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+	HttpClientModule,
+	RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [OrderServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
