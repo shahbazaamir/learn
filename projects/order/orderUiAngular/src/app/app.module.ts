@@ -1,26 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {Routes,RouterModule} from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-
-const appRoutes:Routes =[
-{path:'home',component: HomeComponent}
-];
+import { ScripComponent } from './scrip/scrip.component';
+import { NameComponent } from './scrip/name/name.component';
+import { NseCodeComponent } from './scrip/nse-code/nse-code.component';
+import { OrderComponent } from './order/order.component';
+import { QuantityComponent } from './order/quantity/quantity.component';
+import { TypeComponent } from './order/type/type.component';
+import { PriceComponent } from './order/price/price.component';
+import { IdComponent } from './order/id/id.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-   
-    HomeComponent
+    ScripComponent,
+    NameComponent,
+    NseCodeComponent,
+    OrderComponent,
+    QuantityComponent,
+    TypeComponent,
+    PriceComponent,
+    IdComponent
   ],
   imports: [
-    BrowserModule,
-	HttpModule,
-	RouterModule.forRoot(appRoutes)
+    BrowserModule
   ],
-  
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
