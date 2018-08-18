@@ -9,7 +9,7 @@ import org.hibernate.Session;
 
 public class OrderDao {
 	
-	public int addOrder(String id,String scripName, int price, int quantity) {
+	public int addOrder(String id,String scripName, int price, int quantity,String type) {
 		try{
 				Session s = DatabaseHelper.sessionFactory.openSession();
 				s.beginTransaction();
