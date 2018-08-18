@@ -7,6 +7,7 @@ import org.simpleSpring.bean.BeanFactory;
 import org.simpleSpring.bean.FactoryConstants;
 import org.simpleSpring.util.Util;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -23,4 +24,13 @@ public class OrderController {
 		return Util.gson.toJson(orderDetails);
 	}
 	
+	
+	@RequestMapping(value="/save/order",method = RequestMethod.PUT)
+	public @ResponseBody String saveAllSubject(@RequestBody OrderDetails orderDetails
+			)  {
+		OrderService orderService=(OrderService) BeanFactory.getBean(FactoryConstants.ORDER_SERVICE);
+		OrderDetails<Order> orderDetails1 =orderService.saveOrder(orderDetails);
+		//orderDetails.
+		return Util.gson.toJson(orderDetails);
+	}
 }

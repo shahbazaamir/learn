@@ -6,4 +6,5 @@ import org.springframework.stereotype.Service;
 public interface OrderService {
 
 	public OrderDetails getOrder();
+	public OrderDetails saveOrder(OrderDetails orderDetails);
 }
