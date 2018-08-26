@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-order-page',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderPageComponent implements OnInit {
 
+  @Input() order_id_text : string;
   constructor() { }
-
+   
   ngOnInit() {
   }
-
+	onKey(){
+		console.log(order_id_text.value);
+	}
 }

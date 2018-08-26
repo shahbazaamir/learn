@@ -1,4 +1,8 @@
-<div id="order_id">
-	<span id="order_id_label"> Id :</span>
-	<input type="text" id="order_id_text" name="order_id_text">
+<div>
+	<span> Id :</span>
+	<div class="">
+		<input  type="text"  [(ngModel)]="order_id_text" id="order_id_text" name="order_id_text">
+		<button type="button" (click)="loadId($event)" class="btn">Load</button>
+	</div>
 </div>
+ 
