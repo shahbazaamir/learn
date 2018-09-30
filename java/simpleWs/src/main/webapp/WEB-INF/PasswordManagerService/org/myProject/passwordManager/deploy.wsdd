@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from PasswordManagerService WSDL service -->
+
+  <service name="PasswordManager" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://passwordManager.myProject.org"/>
+      <parameter name="wsdlServiceElement" value="PasswordManagerService"/>
+      <parameter name="schemaQualified" value="http://passwordManager.myProject.org"/>
+      <parameter name="wsdlServicePort" value="PasswordManager"/>
+      <parameter name="className" value="org.myProject.passwordManager.PasswordManager"/>
+      <parameter name="wsdlPortType" value="PasswordManager"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://passwordManager.myProject.org" xmlns:retNS="http://passwordManager.myProject.org" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getPassword" qname="operNS:getPassword" returnQName="retNS:getPasswordReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://passwordManager.myProject.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:key" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="getPassword"/>
+
+  </service>
+</deployment>
