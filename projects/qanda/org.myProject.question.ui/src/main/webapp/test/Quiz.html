@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Quiz</title>
+<script type="text/javascript" src="../js/angular.js"></script>
+<script type="text/javascript" src="../js/jquery-1.11.3.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+var app = angular.module('myApp', []);
+app.controller('formCtrl', function($scope, $http) {
+	var restUrl='http://localhost:8091/org.myProject.question.view3-0.0.1-SNAPSHOT/';
+	$scope.question = "Question 1";
+});
+
+</script>
+</head>
+<body  ng-app="myApp" ng-controller="formCtrl">
+<table>
+<tr>
+<td>
+<span>{{question}}</span>
+
+</td>
+</tr>
+<tr>
+<td>
+<input type="checkbox"  ng-model="optiona1">{{optiona}} 
+</td>
+</tr>
+
+<tr>
+<td>
+<input type="checkbox"  ng-model="optionb1">{{optionb}} 
+</td>
+</tr>
+
+<tr>
+<td>
+<input type="checkbox"  ng-model="optionc1">{{optionc}} 
+</td>
+</tr>
+
+<tr>
+<td>
+<input type="checkbox"  ng-model="optiond1">{{optiond}} 
+</td>
+</tr>
+<tr>
+<td>
+<input type="button" value="Next">
+</td>
+</tr>
+<tr>
+<td>
+<input type="button" value="Previous">
+</td>
+</tr>
+</table>
+</body>
+</html>

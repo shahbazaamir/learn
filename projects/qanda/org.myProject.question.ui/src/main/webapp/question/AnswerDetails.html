@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Answer Details</title>
+<script type="text/javascript" src="../js/angular.js"></script>
+<script type="text/javascript" src="../js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+var app = angular.module('myApp', []);
+app.controller('formCtrl', function($scope, $http) {
+	
+	$scope.add=function() {
+		var reqJson=$scope.question ;
+		$http.post(restUrl+'saveAnswerDetails',
+				 JSON.stringify(reqJson),{headers: {'Accept': 'application/json','Content-Type': 'application/json'}})
+		        .then(function (response) {
+		            //alert( response);
+		        });
+	};
+	$scope.loadAnswerDetails=function() {
+		var reqJson=$scope.question ;
+		$http.get(restUrl+'answer/'+$scope.question.subjectId+'/'+$scope.question.questionId+'/'+$scope.question.answerId,
+				 JSON.stringify(reqJson),{headers: {'Accept': 'application/json','Content-Type': 'application/json'}})
+		        .then(function (response) {
+		        	//console.log(response);
+		        	$scope.question.answerDesc=response.data.answerDesc;
+		        });
+	};
+	
+	$scope.loadAllSubjects=function() {
+		//var reqJson=$scope.question ;
+		$http.get(restUrl+'subject'
+				 //,JSON.stringify(reqJson),{headers: {'Accept': 'application/json','Content-Type': 'application/json'}}
+		)
+		        .then(function (response) {
+		        	//console.log(response);
+		        	$scope.subjects=response.data;
+		        });
+	};
+	$scope.loadAllSubjects();
+	
+	$scope.getAllQuestions=function() {
+		//var reqJson=$scope.question ;
+		$http.get(restUrl+'question/'+$scope.question.subjectId
+				 //,JSON.stringify(reqJson),{headers: {'Accept': 'application/json','Content-Type': 'application/json'}}
+		)
+		        .then(function (response) {
+		        	//console.log(response);
+		        	$scope.questions=response.data;
+		        	$scope.question.answerId="";
+		        	$scope.question.answerDesc="";
+		        });
+	};
+	$scope.clear=function(){
+		$scope.question.answerId="";
+    	$scope.question.answerDesc="";
+	}
+});
+</script>
+</head>
+<body ng-app="myApp" ng-controller="formCtrl">
+<div class="page-header">
+    <h1 align="center">Answer Details</h1>
+  </div>
+<table class="container-fluid">
+
+<tr>
+<td>
+Subject Id
+</td>
+<td>
+				<select class="form-control input-sm" id="subjectIdSelect"  name="subjectIdSelect"  ng-model="question.subjectId" ng-change="getAllQuestions()">
+				<option ng-repeat="elem in subjects" value={{elem.subjectId}}>{{elem.subjectDesc}}</option>
+				</select>
+			</td>
+</tr>
+<tr>
+<td>
+Question Id
+</td>
+<td>
+				<select id="questionId"  name="questionId"  ng-model="question.questionId" ng-change="clear()">
+				<option ng-repeat="elem in questions" value={{elem.questionId}}>{{elem.questionDesc}}</option>
+				</select>
+			</td>
+</tr>
+
+<tr>
+<td>
+Answer Id
+</td>
+<td>
+				<input type="text" id="answerId"  name="answerId"  ng-model="question.answerId">
+			</td>
+</tr>
+<tr>
+<tr>
+<td>
+<input class="btn-primary" type="button" ng-click="loadAnswerDetails()" value="Load">
+</td>
+</tr>
+<tr>
+<td>
+Answer Description
+</td>
+<td>
+				<textarea type="text" id="answerDesc"  name="answerDesc" rows="4" cols="100" ng-model="question.answerDesc"></textarea>
+			</td>
+</tr>
+<tr>
+<td>
+<input class="btn-primary" type="button" ng-click="add()" value="Add">
+</td>
+<td>
+<a href=".">
+<input class="btn-primary" type="button"  value="Menu">
+</a>
+</td>
+</tr>
+
+</table>
+</body>
+</html>

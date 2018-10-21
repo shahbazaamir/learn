@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.myProject</groupId>
+    <artifactId>org.myProject</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>org.myProject</groupId>
+  <artifactId>org.myProject.question.serviceImpl</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+  <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+<dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.7</version>
+</dependency>
+  
+  	<dependency>
+  		<groupId>org.myProject</groupId>
+  		<artifactId>org.myProject.service</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.myProject</groupId>
+  		<artifactId>org.myProject.common.logger</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
+		<groupId>org.mongodb</groupId>
+		<artifactId>mongo-java-driver</artifactId>
+		<version>2.10.1</version>
+	</dependency>
+	<dependency>
+  		<groupId>pics</groupId>
+  <artifactId>pics</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
+</project>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Question</title>
+<script type="text/javascript" src="../js/angular.js"></script>
+<script type="text/javascript" src="../js/jquery-1.11.3.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+var app = angular.module('myApp', []);
+app.controller('formCtrl', function($scope, $http) {
+	var restUrl='http://localhost:8091/org.myProject.question.view3-0.0.1-SNAPSHOT/';
+	$scope.add=function() {
+		var reqJson=$scope.question ;
+		$http.post(restUrl+'saveQuestion',
+				 JSON.stringify(reqJson),{headers: {'Accept': 'application/json','Content-Type': 'application/json'}})
+		        .then(function (response) {
+		            alert( response);
+		        });
+	};
+	$scope.addJson=function() {
+		var jsonString=JSON.stringify($scope.image) ;
+		var urlName=restUrl+'saveImage';
+		$.ajax({ 
+		    url:urlName,    
+		    type:"POST", 
+		    contentType: "application/json; charset=utf-8",
+		    data: jsonString, //Stringified Json Object
+		    async: false,    //Cross-domain requests and dataType: "jsonp" requests do not support synchronous operation
+		    cache: false,    //This will force requested pages not to be cached by the browser          
+		    processData:false, //To avoid making query String instead of JSON
+		    success: function(resposeJsonObject){
+		        console.log(resposeJsonObject);
+		    }
+		});
+	};
+	$scope.getQuestions=function() {
+	//function getQuestions($scope, $http) {
+	    $http.get(restUrl+'pics').
+	        success(function(data) {
+	           // $scope.greeting = data;
+	            console.log(data);
+	        });
+	}
+	$scope.getQuestion=function(questionId) {
+		//function getQuestions($scope, $http) {
+		    $http.get(restUrl+'question?questionId='+questionId).
+		        success(function(data) {
+		           // $scope.greeting = data;
+		            //console.log(data);
+		        });
+		}
+});
+
+function submit(){
+	document.questionForm.action="";
+	document.questionForm.submit();
+}
+</script>
+</head>
+<body ng-app="myApp" ng-controller="formCtrl">
+<form id="questionForm">
+   <table class="table">
+		
+		<tr class="row">
+			<td>
+				Question Id
+			</td>
+			<td>
+				<input type="text" name="imageName" id="imageName"  ng-model="image.imageName">
+			</td>
+			<td>
+				<input type="button" value="Upload" ng-click="upload()">
+			</td>
+		</tr>
+		
+	</table>
+  </form>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script type="text/javascript" src="../js/angular.js"></script>
+<script type="text/javascript" src="../js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+var app = angular.module('myApp', []);
+app.controller('formCtrl', function($scope, $http,$location) {
+	$scope.startTest = new function(){
+		$location
+	}
+	
+	$scope.add=function() {
+		var reqJson=$scope.question ;
+		$http.get(restUrl+'startTest',
+				 JSON.stringify(reqJson),{headers: {'Accept': 'application/json','Content-Type': 'application/json'}})
+		        .then(function (response) {
+		            //alert( response);
+		        });
+	};
+	$scope.loadAnswerDetails=function() {
+		var reqJson=$scope.question ;
+		$http.get(restUrl+'answer/'+$scope.question.subjectId+'/'+$scope.question.questionId+'/'+$scope.question.answerId,
+				 JSON.stringify(reqJson),{headers: {'Accept': 'application/json','Content-Type': 'application/json'}})
+		        .then(function (response) {
+		        	//console.log(response);
+		        	$scope.question.answerDesc=response.data.answerDesc;
+		        });
+	};
+	
+	$scope.loadAllSubjects=function() {
+		//var reqJson=$scope.question ;
+		$http.get(restUrl+'subject'
+				 //,JSON.stringify(reqJson),{headers: {'Accept': 'application/json','Content-Type': 'application/json'}}
+		)
+		        .then(function (response) {
+		        	//console.log(response);
+		        	$scope.subjects=response.data;
+		        });
+	};
+	$scope.loadAllSubjects();
+	
+	$scope.getAllQuestions=function() {
+		//var reqJson=$scope.question ;
+		$http.get(restUrl+'question/'+$scope.question.subjectId
+				 //,JSON.stringify(reqJson),{headers: {'Accept': 'application/json','Content-Type': 'application/json'}}
+		)
+		        .then(function (response) {
+		        	//console.log(response);
+		        	$scope.questions=response.data;
+		        });
+	};
+});
+</script>
+</head>
+<body ng-app="myApp" ng-controller="formCtrl">
+<div class="page-header">
+    <h1 align="center">Take Test</h1>
+  </div>
+<table class="container-fluid">
+<tr>
+<td>
+Subject Id
+</td>
+<td>
+				<select class="form-control input-sm" id="subjectIdSelect"  name="subjectIdSelect"  ng-model="question.subjectId">
+				<option ng-repeat="elem in subjects" value={{elem.subjectId}}>{{elem.subjectDesc}}</option>
+				</select>
+			</td>
+</tr>
+<tr>
+<tr>
+<td>
+<a href="Quiz.html">
+<input class="btn-primary" type="button"  value="Start Test">
+</a>
+</td>
+<td>
+<a href=".">
+<input class="btn-primary" type="button"  value="Test Menu">
+</a>
+</td>
+
+</tr>
+</table>
+
+</body>
+</html>

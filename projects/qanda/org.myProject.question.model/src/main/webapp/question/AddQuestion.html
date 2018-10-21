@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/angular.js"></script>
+<script type="text/javascript" src="../js/jquery-1.11.3.js"></script>
+<script type="text/javascript" >
+var app = angular.module('myApp', []);
+app.controller('formCtrl', function($scope, $http) {
+	//var restUrl='http://localhost:8091/org.myProject.question.view3-0.0.1-SNAPSHOT/';
+	$scope.find=function() {
+		var url='../default/1';
+		$http.get(url
+				 //JSON.stringify({"questionId":"test","subjectId":""})
+				// ,{headers: {'Accept': 'application/json','Content-Type': 'application/json'}}
+		)
+		        .then(function (response) {
+		            console( response);
+		        });
+	};
+	
+	$scope.add=function() {
+		var url='../saveDefault/';
+		$http.post(url,
+				 JSON.stringify({"questionId":"test","subjectId":""})
+				// ,{headers: {'Accept': 'application/json','Content-Type': 'application/json'}}
+		)
+		        .then(function (response) {
+		            console( response);
+		        });
+	};
+});
+</script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="formCtrl">
+<form action="">
+<input type="button" ng-click="add()" value="Test Default">
+</form>
+</div>
+</body>
+</html>
