@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+#animate1 {
+  width: 50px;
+  height: 50px;
+  
+  position: absolute;
+  background-color: blue;
+}
+</style>
+<body>
+
+<p><button onclick="myMove('animate',0,350,1)">red down</button>
+<button onclick="myMove('animate1',0,350,1)">blue down</button></p> 
+<p><button onclick="myMove('animate',350,0,-1)">red up</button>
+<button onclick="myMove('animate1',350,0,-1)">blue up</button></p> 
+<div id ="container">
+  <div id ="animate"></div>
+   <div id ="animate1"></div>
+</div>
+
+<script>
+function myMove(name,pos,end,inc) {
+  var elem = document.getElementById(name);   
+  //var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == end) {
+      clearInterval(id);
+    } else {
+      pos+=inc; 
+      elem.style.top = pos + "px"; 
+      elem.style.left = pos + "px"; 
+    }
+  }
+}
+</script>
+
+</body>
+</html>
