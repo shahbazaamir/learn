@@ -1,8 +1,0 @@
-Service Instance per Container pattern include all except 
-resource utilization
-Limited Efficient Utilization & slow deployment represent 
-service instance per container
-Which of the following is incorrect - with respect to cons about Microservices (I) Increasing number of services can result in information barriers (II) Being a distributed system, it can result in duplication of effort (III) The architecture usually results in increased memory consumption (IV) No long-term commitment to technology stack
-all
-Which among these helps in developing a microservice quickly 
-api gateway
