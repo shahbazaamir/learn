@@ -1,18 +1,27 @@
 package bse;
 
+import java.io.File;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import config.Config;
 import constants.Constants;
 import log.LogWrapper;
 import mail.SendMail;
 import store.Store;
+import util.CommonUtil;
 
 import static constants.Constants.*;
 import static log.LogWrapper.isDebug;
@@ -33,6 +42,8 @@ public class WeekdayLoadAnnManager {
 						if(isDebug)LogWrapper.debug("notice:"+notice.getText());
 						if(BLANK_STRING.equals(notice.getText())) continue;
 						if(Store.notices.contains(notice.getText()))continue;
+						String filename=takeSnapShot(Store.driver,notice);
+						SendMail.sendData(searchText,filename,CommonUtil.getSubject(searchText));
 						Store.notices.add(notice.getText());
 						++matches;
 						mailBody=formMailBody(mailBody, notice, matches);
@@ -49,7 +60,7 @@ public class WeekdayLoadAnnManager {
 			if( matches>0) {
 				mailBody+=MAIL_END;
 				LogWrapper.info(mailBody);
-				SendMail.sendData(mailBody);
+				SendMail.sendData(mailBody,MAIL_SUBJECT);
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -65,7 +76,7 @@ public class WeekdayLoadAnnManager {
 			String preceding=list.get(list.size()-1).getAttribute("innerHTML");
 			mailBody+=preceding;
 		}else{
-			mailBody+="NONE";
+			mailBody+="<td>NONE</td>";
 		}
 		mailBody+=LAGGING_TR_END;
 		mailBody+=CURRENT_TR_START;
@@ -97,6 +108,13 @@ public class WeekdayLoadAnnManager {
 
 				if(BLANK_STRING.equals(notice.getText())) continue;
 				if(Store.notices.contains(notice.getText()))continue;
+				try {
+					String filename=takeSnapShot(Store.driver,notice);
+					SendMail.sendData(searchText,filename,CommonUtil.getSubject(searchText));
+				}catch(Exception e) {
+					LogWrapper.fatal("exception while sending screenshot");
+					LogWrapper.fatal(e);
+				}
 				Store.notices.add(notice.getText());
 				++matches;
 				mailBody=formMailBody(mailBody, notice, matches);
@@ -104,7 +122,7 @@ public class WeekdayLoadAnnManager {
 		}
 		if( matches>0) {
 			mailBody+=MAIL_END;
-			SendMail.sendData(mailBody);
+			SendMail.sendData(mailBody,MAIL_SUBJECT);
 		}
 	}
 
@@ -118,6 +136,26 @@ public class WeekdayLoadAnnManager {
 			LogWrapper.fatal(e);
 		} 
 	}
+	public static String takeSnapShot(WebDriver webdriver, WebElement element) throws Exception{
 
+		DateFormat dateFormat = new SimpleDateFormat("yy-MM-dd HH-mm-ss");
+		Date date = new Date();
+		String filename=Config.getConfig(SCREENSHOT_PATH_KEY)+ "Buyback"+   dateFormat.format(date)+".jpg";
+		Actions actions = new Actions(webdriver);
+		actions.moveToElement(element);
+		actions.perform();
+		TakesScreenshot scrShot =((TakesScreenshot)webdriver);
+
+
+		File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+
+
+		File DestFile=new File(filename);
+
+
+		FileUtils.copyFile(SrcFile, DestFile);
+		return filename;
+
+	}
 
 }
