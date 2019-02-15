@@ -1,0 +1,18 @@
+
+<div class="container">
+<div class="row">
+<div>
+Question:
+<select id="question"  >
+<option>Select</option>
+<option *ngFor="let question of questions" ngValue="id">{{question.questionDesc}}</option>
+</select>
+</div>
+</div>
+<div class="row">
+<div>
+ <button class="btn btn-primary" (click)="onGet()">Get Servers</button>
+</div>
+</div>
+
+</div>
