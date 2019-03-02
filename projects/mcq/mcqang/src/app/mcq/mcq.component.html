@@ -1,0 +1,11 @@
+<h4>Select the cource</h4>
+
+
+
+<mat-form-field>
+  <mat-select placeholder="Question">
+    <mat-option *ngFor="let question of questions" [value]="question.id">
+      {{question.questionDesc}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
