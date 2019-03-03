@@ -17,6 +17,8 @@
 	
 	 <bean id="answerService" class="org.myProject.question.serviceImpl.AnswerServiceImpl">
    </bean>
+    <bean id="optionService" class="org.myProject.question.serviceImpl.OptionServiceImpl">
+   </bean>
    <!-- 
 	 <bean id="testService" class="org.myProject.question.serviceImpl.TestServiceImpl">
    </bean> -->

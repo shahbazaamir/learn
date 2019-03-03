@@ -16,7 +16,7 @@
 	 -->
 	<module>org.myProject.question.serviceImpl</module>
   	<module>org.myProject.service</module>
-	<module>org.myProject.question.view3</module>
+	<module>org.myProject.question.view</module>
 	<module>org.myProject.question.business</module>
 	<module>org.myProject.question.ui</module>
 	<!--
