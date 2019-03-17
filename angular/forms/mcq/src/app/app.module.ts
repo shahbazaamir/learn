@@ -7,6 +7,7 @@ import {Routes,RouterModule} from '@angular/router';
 import { CustDetailComponent } from './cust-detail/cust-detail.component';
 import { MCQComponent } from './mcq/mcq.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { ScoreComponent } from './cust-detail/score/score.component';
 const appRoutes:Routes =[
 {path:'cust-detail',component: CustDetailComponent},
 {path:'mcq',component: MCQComponent},
@@ -18,7 +19,8 @@ const appRoutes:Routes =[
     AppComponent,
     CustDetailComponent,
     MCQComponent,
-    SignUpComponent
+    SignUpComponent,
+    ScoreComponent
   ],
   imports: [
     BrowserModule,
