@@ -24,9 +24,9 @@ export class MCQComponent implements OnInit {
   }
   ngOnInit() {
   }
-	checkAnswer($event){
+	checkAnswer(answer){
 		this.feedback = 6;
-		console.log($event.data );
+		console.log(answer );
 	}
 	ngAfterViewInit(){
 		console.log('view init'+this.scoreComponent.score );
