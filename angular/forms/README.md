@@ -1,5 +1,8 @@
 Forms
 ============================
+CustDetailComponent : uses Template driven forms 
+
+SignUpComponent : uses Model driven (Reactive)  form 
 
 Errors
 -------------------------------------------
