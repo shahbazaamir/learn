@@ -10,13 +10,14 @@ import { Validators } from '@angular/forms';
 })
 export class SignUpComponent implements OnInit {
 
-  constructor() { }
+	constructor() { }
 
-  ngOnInit() {
-  }
-	form= new FormGroup({
-		name1: new FormControl(
-		[ Validators.required, Validators.minLength(4), Validators.maxLength(10) ]
+	ngOnInit() {
+	}
+	form1= new FormGroup({
+		name1: new FormControl('',
+		 [ Validators.required, Validators.minLength(4), Validators.maxLength(10) ]
 		
-		);
+		)
+	});
 }
