@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="ConsultingJPA" transaction-type="JTA">
+	<provider>org.hibernate.ejb.HibernatePersistence</provider>
+	<jta-data-source>java:/consultingDS</jta-data-source>
+	<mapping-file>META-INF/orm.xml</mapping-file>
+		<class>model.Account</class>
+		<class>model.Customer</class>
+		<class>model.PasswordManager</class>
+		<class>model.PUser</class>
+		<class>model.PUserConf</class>
+		<class>model.Bank</class>
+		<class>model.Branch</class>
+		<class>model.Country</class>
+		<class>model.PWorkflow</class>
+		<class>model.BankingDetail</class>
+		<class>model.AccountPK</class>
+		<class>model.BranchPK</class>
+		<class>model.CreditCard</class>
+		<class>model.CreditCardPK</class>
+		<class>model.CustomerPK</class>
+		<class>model.DebitCard</class>
+		<class>model.DebitCardPK</class>
+		<class>model.InternetBanking</class>
+		<class>model.InternetBankingPK</class>
+		<class>model.Unit</class>
+		<class>model.UnitPK</class>
+	</persistence-unit>
+</persistence>

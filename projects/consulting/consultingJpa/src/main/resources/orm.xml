@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm">
+	<named-query name="PUserConf.findAll">
+		<query>SELECT p FROM PUserConf p</query>
+	</named-query>
+	<named-query name="PUser.findAll">
+		<query>SELECT p FROM PUser p</query>
+	</named-query>
+	<named-query name="Account.findAll">
+		<query>SELECT a FROM Account a</query>
+	</named-query>
+	<named-query name="PasswordManager.findAll">
+		<query>SELECT p FROM PasswordManager p</query>
+	</named-query>
+	<named-query name="Customer.findAll">
+		<query>SELECT c FROM Customer c</query>
+	</named-query>
+</entity-mappings>
