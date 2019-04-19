@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SubjectComponent } from './mcq/subject/subject.component';
 import { AnswerComponent } from './mcq/answer/answer.component';
 import { QuestionComponent } from './question/question.component';
+import {DemoMaterialModule} from './material-module';
 
 const appRoutes:Routes =[
 {path:'cust-detail',component: CustDetailComponent},
@@ -42,7 +43,8 @@ const appRoutes:Routes =[
     MatCardModule,
 	HttpModule,
 	MatSelectModule,
-	BrowserAnimationsModule
+  BrowserAnimationsModule,
+  DemoMaterialModule
   ],
   providers: [QuizServiceService],
   bootstrap: [AppComponent]
