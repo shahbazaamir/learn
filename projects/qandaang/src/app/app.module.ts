@@ -1,58 +1,55 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {Routes,RouterModule} from '@angular/router';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { QuestionComponent } from './question/question.component';
-import { HomeComponent } from './home/home.component';
-import { SecuritiesComponent } from './securities/securities.component';
-import { BuyComponent } from './securities/buy/buy.component';
-import { BuypriceComponent } from './securities/buyprice/buyprice.component';
-import { SellpriceComponent } from './securities/sellprice/sellprice.component';
-import { StocksComponent } from './securities/stocks/stocks.component';
-import { ChangeComponent } from './securities/change/change.component';
-import { BrokerageComponent } from './securities/brokerage/brokerage.component';
-import { ProfitComponent } from './securities/profit/profit.component';
-import { NetprofitComponent } from './securities/netprofit/netprofit.component';
-import { RecidentialstatusComponent } from './securities/recidentialstatus/recidentialstatus.component';
-import { ScripComponent } from './securities/scrip/scrip.component';
-import { ProjectsComponent } from './projects/projects.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import {Routes,RouterModule} from '@angular/router';
+import { CustDetailComponent } from './cust-detail/cust-detail.component';
+import { MCQComponent } from './mcq/mcq.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { MatButtonModule, MatInputModule, MatCardModule } from '@angular/material';
+import { QuizServiceService } from './quiz-service.service';
 import { HttpModule } from '@angular/http';
-import { QuestionService } from './question/question.service';
-import { SubjectComponent } from './subject/subject.component';
+import {MatSelectModule} from '@angular/material/select';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SubjectComponent } from './mcq/subject/subject.component';
+import { AnswerComponent } from './mcq/answer/answer.component';
+import { QuestionComponent } from './question/question.component';
+import {DemoMaterialModule} from './material-module';
+import { BackofficeComponent } from './backoffice/backoffice.component';
 
 const appRoutes:Routes =[
-{path:'home',component: HomeComponent},
-{path:'securities',component: SecuritiesComponent},
-{path:'projects',component: ProjectsComponent},
-{path:'question',component: QuestionComponent}
+{path:'cust-detail',component: CustDetailComponent},
+{path:'mcq',component: MCQComponent},
+{path:'sign-up',component: SignUpComponent},
+{path:'app-backoffice',component: BackofficeComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
+    CustDetailComponent,
+    MCQComponent,
+    SignUpComponent,
+    SubjectComponent,
+    AnswerComponent,
     QuestionComponent,
-    HomeComponent,
-    SecuritiesComponent,
-    BuyComponent,
-    BuypriceComponent,
-    SellpriceComponent,
-    StocksComponent,
-    ChangeComponent,
-    BrokerageComponent,
-    ProfitComponent,
-    NetprofitComponent,
-    RecidentialstatusComponent,
-    ScripComponent,
-    ProjectsComponent,
-    SubjectComponent
+    BackofficeComponent
   ],
   imports: [
     BrowserModule,
+	FormsModule,
+	ReactiveFormsModule,
+	RouterModule.forRoot(appRoutes),
+	MatButtonModule,
+    MatInputModule,
+    MatCardModule,
 	HttpModule,
-	RouterModule.forRoot(appRoutes)
+	MatSelectModule,
+  BrowserAnimationsModule,
+  DemoMaterialModule
   ],
-  providers: [QuestionService],
+  providers: [QuizServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

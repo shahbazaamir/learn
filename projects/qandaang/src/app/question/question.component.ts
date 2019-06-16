@@ -1,26 +1,48 @@
-import { Component, OnInit } from '@angular/core';
-import { QuestionService } from './question.service';
-
+import { Component, OnInit, Input } from '@angular/core';
+import { QuizServiceService } from '../quiz-service.service';
 
 @Component({
   selector: 'app-question',
   templateUrl: './question.component.html',
-  styleUrls: ['./question.component.css'],
-  providers:[QuestionService]
+  styleUrls: ['./question.component.css']
 })
-export class QuestionComponent implements OnInit { 
+export class QuestionComponent implements OnInit {
+	@Input() inSubject ;
+	subjectId ;
+	questions;
+	questionDD;
+  constructor(private quizService :QuizServiceService ) { }
 
-  constructor(private questionService:QuestionService) { }
- 
-  
-		ngOnInit() {
+  ngOnInit() {
 	  
-	  this.questionService.loadQuestions().subscribe(
-        (questions: any[]) => {this.questions = questions;console.log(questions);},
-        (error) => console.log(error)
-      );
+		this.quizService.loadQuestionsBySub(this.subjectId)
+			.subscribe(
+				(questions1: any[]) => {
+					this.questions = questions1;
+			
+				},
+				(error) => console.log(error)
+		);
+		this.quizService.data.subscribe(
+			(subjectId : String ) =>{
+				this.subjectId=subjectId;
+				
+				this.quizService.loadQuestionsBySub(this.subjectId)
+				.subscribe(
+					(questions1: any[]) => {
+						this.questions = questions1;
+				
+					},
+					(error) => console.log(error)
+			);
+			} ,
+			(error) => console.log(error)
+		);
 	 
-  }
-  
-  var questions;
+	} ;
+
+	loadAnswers(){
+		console.log('loadAnswers');
+		this.quizService.updateQuestion(this.questionDD);
+	}
 }
