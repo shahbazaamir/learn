@@ -1,19 +1,35 @@
 Spring boot soap webservices
 ======================================
 
+SOAP Request 
+-------------------------------------------------------------------------
+<x:Envelope xmlns:x="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gsp="http://localhost:8093/guides/gs-producing-web-service">
+    <x:Header/>
+    <x:Body>
+        <gsp:getCountryRequest>
+            <gsp:name>Spain</gsp:name>
+        </gsp:getCountryRequest>
+    </x:Body>
+</x:Envelope>
 
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-                  xmlns:gs="http://www.baeldung.com/springsoap/gen">
-    <soapenv:Header/>
-    <soapenv:Body>
-        <gs:getCountryRequest>
-            <gs:name>Spain</gs:name>
-        </gs:getCountryRequest>
-    </soapenv:Body>
-</soapenv:Envelope>
-
+End point URL 
+-----------------------------------------------------------------
 http://localhost:8990/ws
 
-https://www.baeldung.com/spring-boot-soap-web-service
 
-https://github.com/eugenp/tutorials/blob/master/pom.xml
+Success Response 
+-----------------------------------------------------------------
+
+<x:Envelope xmlns:x="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gsp="http://localhost:8093/guides/gs-producing-web-service">
+    <x:Header/>
+    <x:Body>
+        <gsp:getCountryRequest>
+            <gsp:name>Spain</gsp:name>
+        </gsp:getCountryRequest>
+    </x:Body>
+</x:Envelope>
+
+Reference
+-----------------------------------------------------------------
+https://github.com/spring-guides/gs-producing-web-service
+ 
