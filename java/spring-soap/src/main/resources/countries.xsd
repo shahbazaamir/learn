@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.baeldung.com/springsoap/gen"
-           targetNamespace="http://www.baeldung.com/springsoap/gen" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://localhost:8093/guides/gs-producing-web-service"
+           targetNamespace="http://localhost:8093/guides/gs-producing-web-service" elementFormDefault="qualified">
 
     <xs:element name="getCountryRequest">
         <xs:complexType>
@@ -13,6 +12,7 @@
     <xs:element name="getCountryResponse">
         <xs:complexType>
             <xs:sequence>
+            
                 <xs:element name="country" type="tns:country"/>
             </xs:sequence>
         </xs:complexType>
