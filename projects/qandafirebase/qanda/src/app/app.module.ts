@@ -21,6 +21,7 @@ const appRoutes:Routes =[
   imports:      [ BrowserModule, 
   AngularFireModule.initializeApp(environment.firebase),
   RouterModule.forRoot(appRoutes),
+  
   FormsModule ],
   declarations: [ AppComponent, HelloComponent, QuizComponent, SubjectComponent, StartQuizComponent ],
   bootstrap:    [ AppComponent ],
