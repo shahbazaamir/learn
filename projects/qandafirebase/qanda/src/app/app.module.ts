@@ -14,7 +14,7 @@ import { StartQuizComponent } from './start-quiz/start-quiz.component';
 
 
 const appRoutes:Routes =[
-  {path:'start-quiz',component: StartQuizComponent}
+  {path:'start-quiz',component: QuizComponent}
   ];
 
 @NgModule({

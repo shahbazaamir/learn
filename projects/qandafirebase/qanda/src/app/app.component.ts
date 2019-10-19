@@ -10,7 +10,7 @@ export class AppComponent  {
   
   constructor(private router: Router) { }
   start(){
-    let routeToNext = ['/start-quiz' ];
+    let routeToNext = ['/quiz' ];
     this.router.navigate(routeToNext);
   }
 }
