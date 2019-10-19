@@ -9,13 +9,20 @@ import { SubjectComponent } from './subject/subject.component';
 import { QuizService } from './quiz.service';
 import {environment} from "../environments/environment";
 import { AngularFirestore } from '@angular/fire/firestore';
+import {Routes,RouterModule} from '@angular/router';
+import { StartQuizComponent } from './start-quiz/start-quiz.component';
 
+
+const appRoutes:Routes =[
+  {path:'start-quiz',component: StartQuizComponent}
+  ];
 
 @NgModule({
   imports:      [ BrowserModule, 
   AngularFireModule.initializeApp(environment.firebase),
+  RouterModule.forRoot(appRoutes),
   FormsModule ],
-  declarations: [ AppComponent, HelloComponent, QuizComponent, SubjectComponent ],
+  declarations: [ AppComponent, HelloComponent, QuizComponent, SubjectComponent, StartQuizComponent ],
   bootstrap:    [ AppComponent ],
   providers: [QuizService,AngularFirestore]
 })
