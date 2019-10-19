@@ -1,5 +1,5 @@
-<div>
-  <div>{{question}}</div>
+<div class="container">
+  <div  class="question">{{question}}</div>
   <div >
     <div (click)="opt1()" id="opt1">{{option1}}</div>
     <div (click)="opt1()" id="opt2">{{option2}}</div>
@@ -7,7 +7,7 @@
     <div (click)="opt1()" id="opt4">{{option4}}</div>
   </div>
     <div aria-label="Next">
-      <div  (click)="next()">Next</div>
-      <div (click)="previous()">Previous</div>
+      <div class="button" (click)="next()">Next</div>
+      <div class="button" (click)="previous()">Previous</div>
       </div>
    </div>

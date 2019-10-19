@@ -1,0 +1,16 @@
+div{
+    margin:10px;
+    padding:10px;
+    border:1px solid;
+}
+.question{
+    background-color : lightcoral;
+}
+
+.container{
+    background-color : papayawhip;
+}
+
+.button{
+    background-color   : orchid;
+}
