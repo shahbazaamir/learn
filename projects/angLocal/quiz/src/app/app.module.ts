@@ -11,10 +11,12 @@ import { QuizService } from './quiz.service';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { ScoreComponent } from './score/score.component';
 
 const appRoutes : Routes = [
   { path: 'start-quiz'  , component : StartQuizComponent},
-{ path: 'quiz' , component : QuizComponent}
+{ path: 'quiz' , component : QuizComponent},
+{ path: 'score' , component : ScoreComponent}
 ];
 
 
@@ -23,7 +25,8 @@ const appRoutes : Routes = [
     AppComponent,
     QuizComponent,
     SubjectComponent,
-    StartQuizComponent
+    StartQuizComponent,
+    ScoreComponent
   ],
   imports: [
     BrowserModule,

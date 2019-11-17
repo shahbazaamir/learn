@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
 import { Quiz } from "./quiz";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { map } from "rxjs/operators";
 import { Observable } from "rxjs";
 import { QuizService } from "../quiz.service";
@@ -13,11 +13,6 @@ import { QuizService } from "../quiz.service";
 })
 export class QuizComponent implements OnInit {
 
-   
-  
-
-
- 
   subjectId: any = 20;
   quizQuestions: Quiz;
   questions;
@@ -37,7 +32,7 @@ export class QuizComponent implements OnInit {
   answerSet: any[];
   constructor(
     private quizService: QuizService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute ,private router: Router
   ) {
     const id: Observable<string> = this.route.params.pipe(map(p => p.id));
     console.log("id");
@@ -78,27 +73,13 @@ export class QuizComponent implements OnInit {
       error => console.log(error)
     );
      
-    /*
-    this.quizService.loadQuizBySub(this.subjectId)
-			.subscribe( 
-				(questions1: any) => {
-					this.quizQuestions = questions1;
-          console.log('in component ');  
-          console.log(questions1);  
-          this.index = 0;
-          this.loadQuestion(this.index);   
-          this.totalQuestions=  this.quizQuestions.mcqList.length ; 
-          this.answerSet =  this.quizQuestions.answers;
-				},
-				(error) => console.log(error)
-		);
-*/
+    
   }
   loadQuestion(index) {
-    //if(this.firstLoad){
-    //  this.firstLoad=false;
-    //let optIndex = 0;
-    this.question = this.questions[index].desc;
+    
+    if(this.questions[index]){
+      this.question = this.questions[index].desc;
+    
     console.log(this.question);
     let answer1 = this.answers.filter( e => e.id == this.questions[index].id ); 
     this.answer =answer1[this.getRandomInt(answer1.length)].desc;
@@ -145,7 +126,12 @@ export class QuizComponent implements OnInit {
       console.log('default');
       break;
     }
-    //}
+    }else{
+      
+      let routeToNext = ['/score' ];
+      this.router.navigate(routeToNext);
+    
+    }
   }
   next() {
     console.log("next");
