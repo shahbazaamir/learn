@@ -12,3 +12,4 @@ java/accessModifier/.project
 java/accessModifier/.settings/org.eclipse.jdt.core.prefs
 java/accessModifier/.settings/org.eclipse.m2e.core.prefs
 java/accessModifier/target/*
+springboot/pdfGeneration/pdf.zip
