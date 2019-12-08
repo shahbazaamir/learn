@@ -7,6 +7,7 @@ import com.progvocab.pdf.service.PdfService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
@@ -27,6 +28,13 @@ public class PdfController {
     @RequestMapping("/pdf")
     public String generatePdf() {
 		pdfService.generatePdf();
+		return "success";
+    }
+	
+	@CrossOrigin(origins = "http://localhost:4200")
+    @RequestMapping("/pdf/{filename}")
+    public String generatePdfTable(@PathVariable("filename") String filename ) {
+		pdfService.generatePdfTable(filename);
 		return "success";
     }
     
