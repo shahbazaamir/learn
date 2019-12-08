@@ -17,7 +17,7 @@ public class PdfController {
 	
 	
 	@CrossOrigin(origins = "http://localhost:4200")
-    @RequestMapping("/question")
+    @RequestMapping("/index")
     public String index() {
         return "[{\"id\":\"1\",\"questionDesc\":\"What is java?\"}]";
     }
