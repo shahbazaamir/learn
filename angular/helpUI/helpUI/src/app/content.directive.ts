@@ -11,4 +11,13 @@ export class ContentDirective {
     this.el.nativeElement.innerHTML = this.innerHtml;
     console.log(this.innerHtml);
    }
+
+
+   ngAfterContentInit(){
+    console.log(this.innerHtml);
+   }
+
+   ngAfterViewInit(){
+    console.log(this.innerHtml);
+   }
 }
