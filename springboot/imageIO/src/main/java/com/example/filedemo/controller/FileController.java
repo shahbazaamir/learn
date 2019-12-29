@@ -19,7 +19,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-
+@CrossOrigin(origins="*"  , allowedHeaders = "*")
 @RestController
 public class FileController {
 

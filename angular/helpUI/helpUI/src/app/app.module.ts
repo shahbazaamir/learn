@@ -4,16 +4,20 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AppService } from './service/app.service';
+import { ContentDirective } from './content.directive';
+import { Http, HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    ContentDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
-  providers: [ AppService],
+  providers: [ AppService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
