@@ -25,11 +25,14 @@ public class GeneratePdf implements AutoCloseable{
 			//addTitlePage(document);
 			//addContent(document);
 	}
+	
+	
 
 	@Override
 	public void close() throws Exception {
 		System.out.println("close called");
 		document.close();
+		
 	}
 
 	public void generateTable(String string) {
