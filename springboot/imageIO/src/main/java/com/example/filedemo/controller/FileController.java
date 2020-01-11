@@ -70,5 +70,23 @@ public class FileController {
                // .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + dbFile.getFileName() + "\"")
                 .body( new String(dbFile.getData()));
     }
+    
+    
+    @GetMapping("/loadFiles/{fileId}")
+    public ResponseEntity<String> loadFiles(@PathVariable String fileId) {
+        // Load file from database
+        List<DBFile> dbFileList = dbFileStorageService.getFileByName(fileId);
+        DBFile resp = null ;
+        if(dbFileList != null && dbFileList.size() > 0) {
+        	resp= dbFileList.get(0);
+        	 return ResponseEntity.ok()
+                     .contentType( MediaType.valueOf( resp.getFileType() ))
+                    // .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + dbFile.getFileName() + "\"")
+                     .body( new String(resp.getData()));
+        }
+        
+        return ResponseEntity.ok().body("");
+       
+    }
 
 }
