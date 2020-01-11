@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AppService } from './service/app.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,21 +8,22 @@ import { AppService } from './service/app.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'helpUI';
-content ;
+  title = 'DynamicHtml';
+  content ;
+  loadcontent =false;
   constructor(private appService : AppService ){}
-
+  s :Subscription;
   ngOnInit(){
-    this.appService.loadContent().subscribe(
-      res => {
+    this.s =this.appService.loadContent().subscribe(
+      (res:any )=> {
         console.log(res);
-        this.content = res ;
-
+        this.content = res._body ;
+        this.loadcontent = true;
     });
   
   }
 
   ngOnDestroy(){
-
+    if(this.s) this.s.unsubscribe();
   }
 }

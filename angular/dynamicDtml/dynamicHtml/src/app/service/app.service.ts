@@ -6,9 +6,7 @@ import { Headers, Http, Response } from '@angular/http';
   })
 export class AppService {
 
-
     constructor(private http: Http ) { }
-
 
     loadContent(){
         return this.http
