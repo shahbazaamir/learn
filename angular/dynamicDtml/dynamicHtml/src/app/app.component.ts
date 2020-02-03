@@ -8,12 +8,14 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'DynamicHtml';
-  content ;
-  loadcontent =false;
+  private title = 'DynamicHtml';
+  private content ;
+  private loadcontent =false;
+  
+  private s :Subscription;
+  private s1 :Subscription;
+
   constructor(private appService : AppService ){}
-  s :Subscription;
-  s1 :Subscription;
 
   ngOnInit(){
     this.s =this.appService.loadContent().subscribe(

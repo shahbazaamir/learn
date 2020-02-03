@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/helpUI",
+            "outputPath": "dist/dynamicHtml",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "helpUI:build"
+            "browserTarget": "dynamicHtml:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "helpUI:build:production"
+              "browserTarget": "dynamicHtml:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "helpUI:build"
+            "browserTarget": "dynamicHtml:build"
           }
         },
         "test": {
@@ -95,7 +95,7 @@
         }
       }
     },
-    "helpUI-e2e": {
+    "dynamicHtml-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +103,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "helpUI:serve"
+            "devServerTarget": "dynamicHtml:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "helpUI:serve:production"
+              "devServerTarget": "dynamicHtml:serve:production"
             }
           }
         },
@@ -123,5 +123,5 @@
       }
     }
   },
-  "defaultProject": "helpUI"
+  "defaultProject": "dynamicHtml"
 }
