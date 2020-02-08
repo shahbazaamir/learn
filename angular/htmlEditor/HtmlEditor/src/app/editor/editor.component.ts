@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from '../service.service';
 
 @Component({
   selector: 'app-editor',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service : ServiceService) { }
 
   ngOnInit() {
   }
@@ -15,4 +16,17 @@ export class EditorComponent implements OnInit {
   execCom(command){
     document.execCommand(command);
   }
+
+  save(){
+    let formData : data ={
+     "body" :  document.getElementById('test2').innerHTML ,
+    "id" : "1"};
+    this.service.save(formData);
+  }
+}
+
+class data {
+  public  body : string;
+  public  id : string;
+
 }

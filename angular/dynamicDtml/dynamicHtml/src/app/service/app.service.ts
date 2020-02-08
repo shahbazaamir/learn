@@ -15,6 +15,6 @@ export class AppService {
 
     loadContentByName(name : string){
         return this.http
-        .get('http://localhost:8990/loadFiles/'+name);
+        .get('http://localhost:8990/loadFile/'+name);
     }
 }

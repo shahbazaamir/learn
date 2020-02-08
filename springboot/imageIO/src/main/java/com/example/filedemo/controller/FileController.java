@@ -1,6 +1,7 @@
 package com.example.filedemo.controller;
 
 import com.example.filedemo.model.DBFile;
+import com.example.filedemo.payload.SaveRequest;
 import com.example.filedemo.payload.UploadFileResponse;
 import com.example.filedemo.service.DBFileStorageService;
 import org.slf4j.Logger;
@@ -27,6 +28,16 @@ public class FileController {
 
     @Autowired
     private DBFileStorageService dbFileStorageService;
+
+
+    @PostMapping("/saveHtml")
+    public void saveHtml(@RequestBody SaveRequest file) {
+        DBFile dbFile = new DBFile();
+        dbFile.setData(file.getBody().getBytes() );
+        dbFile.setFileName("htmltesting.html");
+        dbFile.setFileType("html");
+        dbFileStorageService.storeHtml(dbFile);
+    }
 
     @PostMapping("/uploadFile")
     public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file) {

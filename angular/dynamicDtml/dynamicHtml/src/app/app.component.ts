@@ -18,7 +18,7 @@ export class AppComponent {
   constructor(private appService : AppService ){}
 
   ngOnInit(){
-    this.s =this.appService.loadContent().subscribe(
+    this.s =this.appService.loadContentByName('ee6367a9-6513-44ac-85bd-45d941b9aa69').subscribe(
       (res:any )=> {
         console.log(res);
         this.content = res._body ;

@@ -43,4 +43,9 @@ public class DBFileStorageService {
     public List<DBFile> getFileByName(String fileName) {
         return dbFileRepository.findByFileName(fileName)     ;
     }
+
+
+    public DBFile storeHtml(DBFile dbFile) {
+        return dbFileRepository.save(dbFile);
+    }
 }
