@@ -15,3 +15,6 @@ java/accessModifier/target/*
 springboot/pdfGeneration/pdf.zip
 springboot/databases/databases.zip
 *.pdf
+java/selenium/.idea/
+java/selenium/target/
+*.iml
