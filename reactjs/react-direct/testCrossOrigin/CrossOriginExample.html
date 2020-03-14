@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+<body>
+  
+<div id="mydiv"></div>
+
+<script type="text/babel">
+class Hello extends React.Component {
+     constructor() {
+        super();
+		this.state = {
+            users: []
+        }
+    }
+    componentDidMount() {
+        fetch(`/api/users`)
+            .then(res => res.json())
+            .then(result =>   {console.log(result);
+                  this.setState({ users: result.users })  })
+    }
+    render() {
+        return (
+            <div>
+                Users: {this.state.users}            
+            </div>
+        )
+    }
+}
+
+ReactDOM.render(<Hello />, document.getElementById('mydiv'))
+</script>
+
+</body>
+</html>
+
+
