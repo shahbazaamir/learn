@@ -26,3 +26,5 @@ springboot/database/db/target/
 java/demo.zip
 reactjs/react-direct/favicon.ico
 nodejs/expressjs/node_modules/
+springboot/aop/aop/logs/
+springboot/aop/aop/.mvn/
