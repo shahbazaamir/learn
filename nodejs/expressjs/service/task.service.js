@@ -1,12 +1,75 @@
-import connection from 'db.js';
 
+'user strict';
+var sql = require('./db.js');
 
+//Task object constructor
+var Task = function(task){
+    this.task_Desc = task.taskDesc;
+    this.task_Ref = task.taskRef;
+    this.task_Status = task.taskStatus;
+};
+Task.createTask = function (newTask, result) {    
+        sql.query("INSERT INTO tasks set ?", newTask, function (err, res) {
+                
+                if(err) {
+                    console.log("error: ", err);
+                    result(err, null);
+                }
+                else{
+                    console.log(res.insertId);
+                    result(null, res.insertId);
+                }
+            });           
+};
+Task.getTaskById = function (taskId, result) {
+        sql.query("Select task from tasks where id = ? ", taskId, function (err, res) {             
+                if(err) {
+                    console.log("error: ", err);
+                    result(err, null);
+                }
+                else{
+                    result(null, res);
+              
+                }
+            });   
+};
+Task.getAllTask = function (result) {
+        sql.query("Select * from tasks", function (err, res) {
 
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-  con.query(sql, function (err, result) {
-    if (err) throw err;
-    console.log("Result: " + result);
-  });
-});
+                if(err) {
+                    console.log("error: ", err);
+                    result(null, err);
+                }
+                else{
+                  console.log('tasks : ', res);  
+
+                 result(null, res);
+                }
+            });   
+};
+Task.updateById = function(id, task, result){
+  sql.query("UPDATE tasks SET task = ? WHERE id = ?", [task.task, id], function (err, res) {
+          if(err) {
+              console.log("error: ", err);
+                result(null, err);
+             }
+           else{   
+             result(null, res);
+                }
+            }); 
+};
+Task.remove = function(id, result){
+     sql.query("DELETE FROM tasks WHERE id = ?", [id], function (err, res) {
+
+                if(err) {
+                    console.log("error: ", err);
+                    result(null, err);
+                }
+                else{
+               
+                 result(null, res);
+                }
+            }); 
+};
+
+module.exports= Task;
