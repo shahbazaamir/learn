@@ -1,0 +1,7 @@
+<div>
+  <select placeholder="Question" [(ngModel)]="questionDD"  (ngModelChange)="loadAnswers($event)">
+    <option *ngFor="let question of questions" [value]="question.id"   >
+      {{question.desc}}
+    </option>
+  </select>
+</div>
