@@ -1,0 +1,6 @@
+<app-subject (valueChange)= 'displayCounter($event)'></app-subject>
+
+<mat-chip-list aria-label="Next">
+  <mat-chip  (click)="start()">Start</mat-chip>
+  <mat-chip (click)="exit()">Exit</mat-chip>
+  </mat-chip-list>
