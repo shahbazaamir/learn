@@ -1,7 +1,0 @@
-<mat-form-field>
-  <mat-select placeholder="Question" [(ngModel)]="questionDD"  (ngModelChange)="loadAnswers($event)">
-    <mat-option *ngFor="let question of questions" [value]="question.questionId"   >
-      {{question.questionDesc}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>

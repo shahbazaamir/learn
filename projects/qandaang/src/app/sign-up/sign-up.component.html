@@ -1,7 +1,0 @@
- <form class="example-form" [formGroup]="form1" (ngSubmit)="onSubmit()">	
-        <mat-form-field >
-        <label>Name:</label>
-        <input matInput type="text" formControlName="name1" id= "name1">		
-    </mat-form-field>
-        <div class="errorName" *ngIf="(!form1.valid) && form1.dirty">Name should be of 4 to 10 characters </div>
-    </form>
