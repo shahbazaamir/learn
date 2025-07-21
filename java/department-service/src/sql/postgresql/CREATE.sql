@@ -1,0 +1,21 @@
+
+CREATE TABLE EMPLOYEE (
+    ID INTEGER PRIMARY KEY  ,
+    NAME VARCHAR(100),
+    DEPARTMENT BIGINT,
+    SALARY NUMERIC
+);
+
+CREATE TABLE department (
+    id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(100) NOT NULL,
+    code VARCHAR(50) UNIQUE NOT NULL,
+    description TEXT
+);
+
+
+CREATE TABLE department_hierarchy (
+    id SERIAL PRIMARY KEY,
+    child_id BIGINT,
+    parent_id BIGINT
+);
