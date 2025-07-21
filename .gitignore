@@ -1,3 +1,19 @@
+employee-service/target
+java/employee-service/.idea/
+java/admin/.mvn/
+java/api_gateway/.gitattributes
+java/api_gateway/.mvn/
+java/books/.gitattributes
+java/books/.mvn/
+java/employee-service/target/
+java/eureka-server/.gitattributes
+java/eureka-server/.mvn/
+java/inventory/.gitattributes
+java/inventory/.mvn/
+
+.DS_Store
+java/.DS_Store
+java/.idea/
 
 projects/order/orderController/target/orderController-0.0.1-SNAPSHOT/WEB-INF/lib/aspectjweaver-1.6.11.jar
 projects/order/orderController/target/orderController-0.0.1-SNAPSHOT/WEB-INF/lib/commons-logging-1.1.3.jar
@@ -35,3 +51,5 @@ nodejs/expressjs/out.log.3
 nodejs/expressjs/out.log.4
 nodejs/expressjs/out.log.5
 nodejs/tasks/node_modules/
+java/department-service/.idea/
+java/department-service/.DS_Store
