@@ -51,3 +51,9 @@ curl -i http://localhost:8082/employees/x
 The response is with a slight delay , validate the retry in the employee-service logs
 
 ![Retry](assets/retry.png)
+
+
+- References 
+1. https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway-server-webflux/gatewayfilter-factories/fallback-headers.html
+2. https://microservices.io/patterns/deployment/service-mesh.html
+3. https://github.com/spring-guides/gs-service-registration-and-discovery/blob/main/servicea/pom.xml
