@@ -16,3 +16,5 @@ docker-compose up
 ![Response](assets/kafka_start.png)
 
 
+Try the URL : http://localhost:9000
+![Kafdrop](assets/kafdrop.png)

@@ -1,0 +1,11 @@
+package com.example.order.model;
+
+public enum OrderStatus {
+    ORDER_CREATED,
+    INVENTORY_VALIDATE,
+    INVENTORY_RESERVED,
+    PAYMENT_PROCESSED,
+    SHIPMENT_CONFIRMED,
+    INVENTORY_RESERVATION_FAILED,
+    FAILED
+}
