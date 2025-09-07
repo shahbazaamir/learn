@@ -1,3 +1,6 @@
+server:
+  port: 8055
+
 spring:
   kafka:
     bootstrap-servers: localhost:9092
@@ -12,6 +15,26 @@ spring:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/org
+      database: org
+  application:
+    name: org
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 60000
+    lettuce:
+      pool:
+        max-active: 10
+        max-idle: 5
+        min-idle: 1
+
+
+logging:
+  level:
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
 
 
 

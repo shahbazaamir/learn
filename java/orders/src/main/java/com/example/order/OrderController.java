@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.kafka.core.KafkaTemplate;
 
-@RestController
-@RequestMapping("/api/v1/order")
+//@RestController
+//@RequestMapping("/api/v1/order")
 public class OrderController {
     private final KafkaTemplate<String, Object> kafkaTemplate;
 
