@@ -1,9 +1,3 @@
-#
-//  rev.py
-//  spring-test
-//
-//  Created by Zainab Firdaus on 21/06/25.
-//
 
 class ListNode(object):
      def __init__(self, val=0, next=None):

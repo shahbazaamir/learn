@@ -6,5 +6,20 @@ Run this command to add local modules
 ```shell
 export PYTHONPATH="~/git/learn/python3:$PYTHONPATH"
 ```
+### Activate virtual env if you are using any
 
-### Run Jupyter Notebook
+```shell
+source ~/git/airflow/.venv/bin/activate
+```
+
+### install modules if not available
+
+```shell
+uv pip install notebook
+```
+
+### Run Jupyter Notebook - not working
+
+```shell
+env PYTHONPATH="~/git/learn/python3:$PYTHONPATH" jupyter notebook
+```
