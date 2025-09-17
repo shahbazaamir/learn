@@ -1,0 +1,40 @@
+
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8  # Specify the Python version your Falcon API uses
+    commands:
+      - echo "Installing dependencies..."
+      - cd python
+      - pip install -r requirements.txt
+
+  pre_build:
+    commands:
+      - echo "Running pre-build tests..."
+      - pwd
+      - echo $EC2_DNS
+
+  build:
+    commands:
+      - echo "Packaging the application..."
+      - zip -r app.zip .  # Zip the application files for easy transfer to the EC2 instance
+
+  post_build:
+    commands:
+      - echo "Starting deployment to EC2..."
+      - sudo chmod 400 mykeypair.pem
+      - scp -o StrictHostKeyChecking=no -i mykeypair.pem app.zip ec2-user@$EC2_DNS:/home/ec2-user/
+      - ssh -o StrictHostKeyChecking=no -i mykeypair.pem ec2-user@$EC2_DNS <<EOF
+          echo "Unzipping application files..."
+          unzip -o /home/ec2-user/app.zip -d /home/ec2-user/app
+          cd /home/ec2-user/app
+          echo "Starting Falcon API..."
+          nohup python -m gunicorn -w 4 -b 0.0.0.0:8000 app:api &
+          exit
+        EOF
+
+artifacts:
+  files:
+    - app.zip
