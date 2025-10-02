@@ -12,7 +12,8 @@ java/eureka-server/.gitattributes
 java/eureka-server/.mvn/
 java/inventory/.gitattributes
 java/inventory/.mvn/
-
+java/threads/target
+java/threads/.idea/
 .DS_Store
 java/.DS_Store
 java/.idea/
