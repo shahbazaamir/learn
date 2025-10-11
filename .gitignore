@@ -56,3 +56,7 @@ nodejs/expressjs/out.log.5
 nodejs/tasks/node_modules/
 java/department-service/.idea/
 java/department-service/.DS_Store
+java/chat_system/.idea/
+java/chat_system/target/
+reactjs/chat-system/node_modules/
+reactjs/chat-system/package-lock.json
