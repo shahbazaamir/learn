@@ -1,4 +1,6 @@
 tmp
+python3/notebooks/.ipynb_checkpoints
+python3/notebooks/ml/.ipynb_checkpoints
 python3/rest-api/venv
 employee-service/target
 java/employee-service/.idea/
