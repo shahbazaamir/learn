@@ -1,4 +1,7 @@
 package com.example.proxy;
 
-public class DataStructure {
+public interface DataStructure {
+     public int get(int i)  ;
+
+    public void set(int i, int v)  ;
 }

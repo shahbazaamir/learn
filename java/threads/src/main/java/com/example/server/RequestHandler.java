@@ -10,6 +10,9 @@ import java.net.Socket;
 import java.util.Map;
 import java.util.HashMap;
 
+/**
+ * Handles Http Request
+ */
     class RequestHandler implements Runnable {
 
         private final Socket clientSocket;

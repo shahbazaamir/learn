@@ -1,0 +1,327 @@
+{
+    "activeProfiles": [],
+    "propertySources": [
+        {
+            "name": "server.ports",
+            "properties": {
+                "local.server.port": {
+                    "value": 9090
+                }
+            }
+        },
+        {
+            "name": "servletContextInitParams",
+            "properties": {}
+        },
+        {
+            "name": "systemProperties",
+            "properties": {
+                "java.specification.version": {
+                    "value": "23"
+                },
+                "sun.jnu.encoding": {
+                    "value": "UTF-8"
+                },
+                "java.class.path": {
+                    "value": "/Users/zainabfirdaus/git/learn/java/maven_web_project/target/classes:/Users/zainabfirdaus/.m2/repository/org/springframework/boot/spring-boot/2.7.18/spring-boot-2.7.18.jar:/Users/zainabfirdaus/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.7.18/spring-boot-autoconfigure-2.7.18.jar:/Users/zainabfirdaus/.m2/repository/ch/qos/logback/logback-classic/1.2.12/logback-classic-1.2.12.jar:/Users/zainabfirdaus/.m2/repository/ch/qos/logback/logback-core/1.2.12/logback-core-1.2.12.jar:/Users/zainabfirdaus/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/Users/zainabfirdaus/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.17.2/log4j-to-slf4j-2.17.2.jar:/Users/zainabfirdaus/.m2/repository/org/apache/logging/log4j/log4j-api/2.17.2/log4j-api-2.17.2.jar:/Users/zainabfirdaus/.m2/repository/org/slf4j/jul-to-slf4j/1.7.36/jul-to-slf4j-1.7.36.jar:/Users/zainabfirdaus/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar:/Users/zainabfirdaus/.m2/repository/org/springframework/spring-core/5.3.31/spring-core-5.3.31.jar:/Users/zainabfirdaus/.m2/repository/org/springframework/spring-jcl/5.3.31/spring-jcl-5.3.31.jar:/Users/zainabfirdaus/.m2/repository/org/yaml/snakeyaml/1.30/snakeyaml-1.30.jar:/Users/zainabfirdaus/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.13.5/jackson-databind-2.13.5.jar:/Users/zainabfirdaus/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.5/jackson-annotations-2.13.5.jar:/Users/zainabfirdaus/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.13.5/jackson-core-2.13.5.jar:/Users/zainabfirdaus/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.13.5/jackson-datatype-jdk8-2.13.5.jar:/Users/zainabfirdaus/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.13.5/jackson-datatype-jsr310-2.13.5.jar:/Users/zainabfirdaus/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.13.5/jackson-module-parameter-names-2.13.5.jar:/Users/zainabfirdaus/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.83/tomcat-embed-core-9.0.83.jar:/Users/zainabfirdaus/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/9.0.83/tomcat-embed-el-9.0.83.jar:/Users/zainabfirdaus/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/9.0.83/tomcat-embed-websocket-9.0.83.jar:/Users/zainabfirdaus/.m2/repository/org/springframework/spring-web/5.3.31/spring-web-5.3.31.jar:/Users/zainabfirdaus/.m2/repository/org/springframework/spring-beans/5.3.31/spring-beans-5.3.31.jar:/Users/zainabfirdaus/.m2/repository/org/springframework/spring-webmvc/5.3.31/spring-webmvc-5.3.31.jar:/Users/zainabfirdaus/.m2/repository/org/springframework/spring-aop/5.3.31/spring-aop-5.3.31.jar:/Users/zainabfirdaus/.m2/repository/org/springframework/spring-context/5.3.31/spring-context-5.3.31.jar:/Users/zainabfirdaus/.m2/repository/org/springframework/spring-expression/5.3.31/spring-expression-5.3.31.jar:/Users/zainabfirdaus/.m2/repository/org/springframework/boot/spring-boot-actuator-autoconfigure/2.7.18/spring-boot-actuator-autoconfigure-2.7.18.jar:/Users/zainabfirdaus/.m2/repository/org/springframework/boot/spring-boot-actuator/2.7.18/spring-boot-actuator-2.7.18.jar:/Users/zainabfirdaus/.m2/repository/io/micrometer/micrometer-core/1.9.17/micrometer-core-1.9.17.jar:/Users/zainabfirdaus/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.12/HdrHistogram-2.1.12.jar:/Users/zainabfirdaus/.m2/repository/org/latencyutils/LatencyUtils/2.0.3/LatencyUtils-2.0.3.jar"
+                },
+                "java.vm.vendor": {
+                    "value": "Homebrew"
+                },
+                "sun.arch.data.model": {
+                    "value": "64"
+                },
+                "java.vendor.url": {
+                    "value": "https://github.com/Homebrew/homebrew-core/issues"
+                },
+                "catalina.useNaming": {
+                    "value": "false"
+                },
+                "user.timezone": {
+                    "value": "Asia/Kolkata"
+                },
+                "java.vm.specification.version": {
+                    "value": "23"
+                },
+                "os.name": {
+                    "value": "Mac OS X"
+                },
+                "sun.java.launcher": {
+                    "value": "SUN_STANDARD"
+                },
+                "user.country": {
+                    "value": "IN"
+                },
+                "sun.boot.library.path": {
+                    "value": "/opt/homebrew/Cellar/openjdk/23.0.2/libexec/openjdk.jdk/Contents/Home/lib"
+                },
+                "sun.java.command": {
+                    "value": "******"
+                },
+                "http.nonProxyHosts": {
+                    "value": "local|*.local|169.254/16|*.169.254/16"
+                },
+                "jdk.debug": {
+                    "value": "release"
+                },
+                "sun.cpu.endian": {
+                    "value": "little"
+                },
+                "user.home": {
+                    "value": "/Users/zainabfirdaus"
+                },
+                "user.language": {
+                    "value": "en"
+                },
+                "java.specification.vendor": {
+                    "value": "Oracle Corporation"
+                },
+                "java.version.date": {
+                    "value": "2025-01-21"
+                },
+                "java.home": {
+                    "value": "/opt/homebrew/Cellar/openjdk/23.0.2/libexec/openjdk.jdk/Contents/Home"
+                },
+                "file.separator": {
+                    "value": "/"
+                },
+                "java.vm.compressedOopsMode": {
+                    "value": "Zero based"
+                },
+                "line.separator": {
+                    "value": "\n"
+                },
+                "java.vm.specification.vendor": {
+                    "value": "Oracle Corporation"
+                },
+                "java.specification.name": {
+                    "value": "Java Platform API Specification"
+                },
+                "FILE_LOG_CHARSET": {
+                    "value": "UTF-8"
+                },
+                "java.awt.headless": {
+                    "value": "true"
+                },
+                "apple.awt.application.name": {
+                    "value": "Application"
+                },
+                "sun.management.compiler": {
+                    "value": "HotSpot 64-Bit Tiered Compilers"
+                },
+                "ftp.nonProxyHosts": {
+                    "value": "local|*.local|169.254/16|*.169.254/16"
+                },
+                "java.runtime.version": {
+                    "value": "23.0.2"
+                },
+                "user.name": {
+                    "value": "zainabfirdaus"
+                },
+                "stdout.encoding": {
+                    "value": "UTF-8"
+                },
+                "path.separator": {
+                    "value": ":"
+                },
+                "os.version": {
+                    "value": "14.6"
+                },
+                "java.runtime.name": {
+                    "value": "OpenJDK Runtime Environment"
+                },
+                "file.encoding": {
+                    "value": "UTF-8"
+                },
+                "spring.beaninfo.ignore": {
+                    "value": "true"
+                },
+                "java.vm.name": {
+                    "value": "OpenJDK 64-Bit Server VM"
+                },
+                "java.vendor.version": {
+                    "value": "Homebrew"
+                },
+                "java.vendor.url.bug": {
+                    "value": "https://github.com/Homebrew/homebrew-core/issues"
+                },
+                "java.io.tmpdir": {
+                    "value": "/var/folders/9v/l_th953n4270qgzv2_7ygdd80000gn/T/"
+                },
+                "catalina.home": {
+                    "value": "/private/var/folders/9v/l_th953n4270qgzv2_7ygdd80000gn/T/tomcat.9090.18088568728880851016"
+                },
+                "java.version": {
+                    "value": "23.0.2"
+                },
+                "user.dir": {
+                    "value": "/Users/zainabfirdaus/git/learn/java/maven_web_project"
+                },
+                "os.arch": {
+                    "value": "aarch64"
+                },
+                "java.vm.specification.name": {
+                    "value": "Java Virtual Machine Specification"
+                },
+                "PID": {
+                    "value": "46386"
+                },
+                "CONSOLE_LOG_CHARSET": {
+                    "value": "UTF-8"
+                },
+                "catalina.base": {
+                    "value": "/private/var/folders/9v/l_th953n4270qgzv2_7ygdd80000gn/T/tomcat.9090.18088568728880851016"
+                },
+                "native.encoding": {
+                    "value": "UTF-8"
+                },
+                "java.library.path": {
+                    "value": "/Users/zainabfirdaus/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."
+                },
+                "java.vm.info": {
+                    "value": "mixed mode, emulated-client, sharing"
+                },
+                "stderr.encoding": {
+                    "value": "UTF-8"
+                },
+                "java.vendor": {
+                    "value": "Homebrew"
+                },
+                "java.vm.version": {
+                    "value": "23.0.2"
+                },
+                "sun.io.unicode.encoding": {
+                    "value": "UnicodeBig"
+                },
+                "socksNonProxyHosts": {
+                    "value": "local|*.local|169.254/16|*.169.254/16"
+                },
+                "java.class.version": {
+                    "value": "67.0"
+                }
+            }
+        },
+        {
+            "name": "systemEnvironment",
+            "properties": {
+                "HOMEBREW_PREFIX": {
+                    "value": "/opt/homebrew",
+                    "origin": "System Environment Property \"HOMEBREW_PREFIX\""
+                },
+                "TERM_SESSION_ID": {
+                    "value": "3C99D9AB-5ACD-4358-A79F-2AB64CF5F4D6",
+                    "origin": "System Environment Property \"TERM_SESSION_ID\""
+                },
+                "SHLVL": {
+                    "value": "1",
+                    "origin": "System Environment Property \"SHLVL\""
+                },
+                "INFOPATH": {
+                    "value": "/opt/homebrew/share/info:",
+                    "origin": "System Environment Property \"INFOPATH\""
+                },
+                "SHELL": {
+                    "value": "/bin/zsh",
+                    "origin": "System Environment Property \"SHELL\""
+                },
+                "TMPDIR": {
+                    "value": "/var/folders/9v/l_th953n4270qgzv2_7ygdd80000gn/T/",
+                    "origin": "System Environment Property \"TMPDIR\""
+                },
+                "__CFBundleIdentifier": {
+                    "value": "com.apple.Terminal",
+                    "origin": "System Environment Property \"__CFBundleIdentifier\""
+                },
+                "MAVEN_PROJECTBASEDIR": {
+                    "value": "/Users/zainabfirdaus/git/learn/java/maven_web_project",
+                    "origin": "System Environment Property \"MAVEN_PROJECTBASEDIR\""
+                },
+                "HOME": {
+                    "value": "/Users/zainabfirdaus",
+                    "origin": "System Environment Property \"HOME\""
+                },
+                "HOMEBREW_REPOSITORY": {
+                    "value": "/opt/homebrew",
+                    "origin": "System Environment Property \"HOMEBREW_REPOSITORY\""
+                },
+                "PATH": {
+                    "value": "/opt/homebrew/opt/node@18/bin:/Users/zainabfirdaus/.local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin",
+                    "origin": "System Environment Property \"PATH\""
+                },
+                "TERM": {
+                    "value": "xterm-256color",
+                    "origin": "System Environment Property \"TERM\""
+                },
+                "LOGNAME": {
+                    "value": "zainabfirdaus",
+                    "origin": "System Environment Property \"LOGNAME\""
+                },
+                "XPC_FLAGS": {
+                    "value": "0x0",
+                    "origin": "System Environment Property \"XPC_FLAGS\""
+                },
+                "__CF_USER_TEXT_ENCODING": {
+                    "value": "0x1F5:0x0:0x0",
+                    "origin": "System Environment Property \"__CF_USER_TEXT_ENCODING\""
+                },
+                "MAVEN_CMD_LINE_ARGS": {
+                    "value": " spring-boot:run",
+                    "origin": "System Environment Property \"MAVEN_CMD_LINE_ARGS\""
+                },
+                "TERM_PROGRAM_VERSION": {
+                    "value": "453",
+                    "origin": "System Environment Property \"TERM_PROGRAM_VERSION\""
+                },
+                "TERM_PROGRAM": {
+                    "value": "Apple_Terminal",
+                    "origin": "System Environment Property \"TERM_PROGRAM\""
+                },
+                "LC_CTYPE": {
+                    "value": "UTF-8",
+                    "origin": "System Environment Property \"LC_CTYPE\""
+                },
+                "JAVA_HOME": {
+                    "value": "/opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home",
+                    "origin": "System Environment Property \"JAVA_HOME\""
+                },
+                "SSH_AUTH_SOCK": {
+                    "value": "/private/tmp/com.apple.launchd.A5531xynz1/Listeners",
+                    "origin": "System Environment Property \"SSH_AUTH_SOCK\""
+                },
+                "OLDPWD": {
+                    "value": "/Users/zainabfirdaus/git/learn/java/maven_web_project",
+                    "origin": "System Environment Property \"OLDPWD\""
+                },
+                "XPC_SERVICE_NAME": {
+                    "value": "0",
+                    "origin": "System Environment Property \"XPC_SERVICE_NAME\""
+                },
+                "USER": {
+                    "value": "zainabfirdaus",
+                    "origin": "System Environment Property \"USER\""
+                },
+                "HOMEBREW_CELLAR": {
+                    "value": "/opt/homebrew/Cellar",
+                    "origin": "System Environment Property \"HOMEBREW_CELLAR\""
+                },
+                "PWD": {
+                    "value": "/Users/zainabfirdaus/git/learn/java/maven_web_project",
+                    "origin": "System Environment Property \"PWD\""
+                }
+            }
+        },
+        {
+            "name": "Config resource 'class path resource [application.properties]' via location 'optional:classpath:/'",
+            "properties": {
+                "server.port": {
+                    "value": "9090",
+                    "origin": "class path resource [application.properties] - 1:13"
+                },
+                "management.endpoints.web.exposure.include": {
+                    "value": "*",
+                    "origin": "class path resource [application.properties] - 2:43"
+                }
+            }
+        }
+    ]
+}               

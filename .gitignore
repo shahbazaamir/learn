@@ -1,4 +1,9 @@
 tmp
+java/spring-batch/.idea
+java/spring-soap/.idea
+java/spring-batch/target
+java/maven_web_project/target
+java/maven_web_project/.idea
 python3/notebooks/.ipynb_checkpoints
 python3/notebooks/ml/.ipynb_checkpoints
 python3/rest-api/venv
