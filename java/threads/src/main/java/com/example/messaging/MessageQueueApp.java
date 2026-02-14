@@ -3,7 +3,9 @@ package com.example.messaging;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ArrayBlockingQueue;
 
-// Main application
+/**
+ * Singleton class
+ */
 public class MessageQueueApp {
 
     private MessageQueueApp(){

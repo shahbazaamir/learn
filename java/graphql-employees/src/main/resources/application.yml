@@ -1,0 +1,7 @@
+spring:
+  graphql:
+    path: /graphql
+    graphiql:
+      enabled: true
+server:
+  port: 8109

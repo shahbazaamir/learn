@@ -1,0 +1,6 @@
+firstName,lastName,email,department,salary
+John,Doe,john.doe@company.com,Engineering,75000.0
+Jane,Smith,jane.smith@company.com,Marketing,65000.0
+Mike,Johnson,mike.johnson@company.com,Sales,55000.0
+Sarah,Wilson,sarah.wilson@company.com,HR,60000.0
+David,Brown,david.brown@company.com,Engineering,80000.0

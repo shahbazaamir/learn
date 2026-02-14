@@ -1,0 +1,55 @@
+{
+    "name": "http.server.requests",
+    "description": "Duration of HTTP server request handling",
+    "baseUnit": "seconds",
+    "measurements": [
+        {
+            "statistic": "COUNT",
+            "value": 6.0
+        },
+        {
+            "statistic": "TOTAL_TIME",
+            "value": 0.081470499
+        },
+        {
+            "statistic": "MAX",
+            "value": 0.0
+        }
+    ],
+    "availableTags": [
+        {
+            "tag": "exception",
+            "values": [
+                "None"
+            ]
+        },
+        {
+            "tag": "method",
+            "values": [
+                "GET"
+            ]
+        },
+        {
+            "tag": "uri",
+            "values": [
+                "/actuator/health",
+                "/actuator/info",
+                "/actuator/beans",
+                "/actuator/metrics",
+                "/actuator/env"
+            ]
+        },
+        {
+            "tag": "outcome",
+            "values": [
+                "SUCCESS"
+            ]
+        },
+        {
+            "tag": "status",
+            "values": [
+                "200"
+            ]
+        }
+    ]
+}

@@ -8,7 +8,7 @@
 
 package localhost._8093.guides.gs_producing_web_service;
 
-import javax.xml.bind.annotation.XmlRegistry;
+import jakarta.xml.bind.annotation.XmlRegistry;
 
 
 /**

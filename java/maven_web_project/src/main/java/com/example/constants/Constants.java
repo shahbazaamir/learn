@@ -1,4 +1,7 @@
-package com.example;
+package com.example.constants;
 
-public class Constants {
+public final class Constants {
+
+    public static final String LINES ="\n\n\n\n\n";
+
 }

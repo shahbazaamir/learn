@@ -6,6 +6,10 @@ import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * A Simple HTTP Server
+ * Singleton class
+ */
 public class MyHttpServer {
 
     private MyHttpServer(){

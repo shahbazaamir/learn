@@ -5,5 +5,5 @@
 // Generated on: 2019.07.06 at 06:05:02 PM IST 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://localhost:8093/guides/gs-producing-web-service", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+@jakarta.xml.bind.annotation.XmlSchema(namespace = "http://localhost:8093/guides/gs-producing-web-service", elementFormDefault = jakarta.xml.bind.annotation.XmlNsForm.QUALIFIED)
 package localhost._8093.guides.gs_producing_web_service;
