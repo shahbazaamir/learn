@@ -1,5 +1,6 @@
 package com.example.proxy;
 
+<<<<<<< HEAD
 /**
  * ProxyTest demonstrates all three proxy patterns:
  * <ul>
@@ -11,6 +12,8 @@ package com.example.proxy;
  * Run with:
  * <pre>mvn compile exec:java -Dexec.mainClass="com.example.proxy.ProxyTest"</pre>
  */
+=======
+>>>>>>> 0d2ddc6ae2b3bd24abc1135e391cbef7cca59fae
 public class ProxyTest {
     
     public static void main(String[] args) {
