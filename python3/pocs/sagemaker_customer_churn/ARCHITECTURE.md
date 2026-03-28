@@ -14,7 +14,7 @@ for the retention team to act on.
 
 ```mermaid
 flowchart TD
-    A[CRM / Billing System\nRaw customer data] -->|monthly export| B[S3 Raw Data\ncustomer_data.csv]
+    A[CRM / Billing System Raw customer data] -->|monthly export| B[S3 Raw Data\ncustomer_data.csv]
     B --> C[SageMaker Data Wrangler\nchurn.flow]
     C -->|ProcessingJob| D[S3 Processed Data\ntrain / validation splits]
     D --> E[SageMaker Training Job\nXGBoost]
