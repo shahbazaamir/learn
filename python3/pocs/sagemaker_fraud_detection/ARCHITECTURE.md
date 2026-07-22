@@ -25,18 +25,18 @@ Dimensionality reduction makes this possible by compressing 50 features into 2�
 
 ```mermaid
 flowchart TD
-    A[Core Banking System\n10M transactions/day] -->|Kinesis Firehose| B[S3 Raw Transactions\nParquet, partitioned by date]
-    B -->|daily batch| C[SageMaker Processing Job\nFeature Engineering]
-    C --> D[S3 Feature Store\n50 engineered features]
-    D --> E1[PCA\nNoise removal\n50 → 15 components]
-    D --> E2[t-SNE\n2D cluster visualization\n50 → 2 dims]
-    D --> E3[LDA\nClass separability check\n50 → 1 dim]
-    E1 -->|reduced features| F[SageMaker Training\nXGBoost Fraud Classifier]
-    E2 -->|2D coordinates| G[QuickSight Dashboard\nCluster Plot]
-    E3 -->|separation score| H[Model Quality Gate\nAUC + LDA score check]
-    F --> I[SageMaker Endpoint\nReal-time fraud scoring]
+    A[Core Banking System    10M transactions/day] -->|Kinesis Firehose| B[S3 Raw Transactions    Parquet, partitioned by date]
+    B -->|daily batch| C[SageMaker Processing Job    Feature Engineering]
+    C --> D[S3 Feature Store    50 engineered features]
+    D --> E1[PCA    Noise removal    50 → 15 components]
+    D --> E2[t-SNE    2D cluster visualization    50 → 2 dims]
+    D --> E3[LDA    Class separability check    50 → 1 dim]
+    E1 -->|reduced features| F[SageMaker Training    XGBoost Fraud Classifier]
+    E2 -->|2D coordinates| G[QuickSight Dashboard    Cluster Plot]
+    E3 -->|separation score| H[Model Quality Gate    AUC + LDA score check]
+    F --> I[SageMaker Endpoint    Real-time fraud scoring]
     H -->|pass| I
-    H -->|fail| J[SNS Alert\nFeature drift detected]
+    H -->|fail| J[SNS Alert    Feature drift detected]
 
     style A fill:#f0f0f0,stroke:#aaa
     style B fill:#FF9900,color:#fff,stroke:#FF9900
@@ -58,13 +58,13 @@ flowchart TD
 
 ```mermaid
 flowchart LR
-    A[Raw Features\n50 dims] --> B[Standardise\nStandardScaler]
-    B --> C1[PCA\nsklearn.decomposition.PCA\nretain 95% variance]
-    B --> C2[t-SNE\nsklearn.manifold.TSNE\nperplexity=30, n_iter=1000]
-    B --> C3[LDA\nsklearn.discriminant_analysis\n.LinearDiscriminantAnalysis]
-    C1 -->|15 components| D1[Training features\nCSV to S3]
-    C2 -->|x, y coords + label| D2[Visualisation JSON\nto S3 → QuickSight]
-    C3 -->|Fisher score| D3[Separation metric\nlogged to CloudWatch]
+    A[Raw Features    50 dims] --> B[Standardise    StandardScaler]
+    B --> C1[PCA    sklearn.decomposition.PCA    retain 95% variance]
+    B --> C2[t-SNE    sklearn.manifold.TSNE    perplexity=30, n_iter=1000]
+    B --> C3[LDA    sklearn.discriminant_analysis    .LinearDiscriminantAnalysis]
+    C1 -->|15 components| D1[Training features    CSV to S3]
+    C2 -->|x, y coords + label| D2[Visualisation JSON    to S3 → QuickSight]
+    C3 -->|Fisher score| D3[Separation metric    logged to CloudWatch]
 ```
 
 ---
@@ -73,11 +73,11 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-    A[Month N transactions\nt-SNE plot] --> C{Cluster overlap\n> threshold?}
-    B[Month N+1 transactions\nt-SNE plot] --> C
-    C -->|No overlap increase| D[Patterns stable\nno retraining needed]
-    C -->|Overlap increased| E[Fraud pattern shifted\ntrigger retraining pipeline]
-    E --> F[New Data Wrangler job\n+ retrain XGBoost]
+    A[Month N transactions    t-SNE plot] --> C{Cluster overlap    > threshold?}
+    B[Month N+1 transactions    t-SNE plot] --> C
+    C -->|No overlap increase| D[Patterns stable    no retraining needed]
+    C -->|Overlap increased| E[Fraud pattern shifted    trigger retraining pipeline]
+    E --> F[New Data Wrangler job    + retrain XGBoost]
 ```
 
 ---
