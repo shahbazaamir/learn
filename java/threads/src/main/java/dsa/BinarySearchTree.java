@@ -1,4 +1,4 @@
-package test.dsa;
+package dsa;
 
 import java.util.Comparator;
 import java.util.Collection;

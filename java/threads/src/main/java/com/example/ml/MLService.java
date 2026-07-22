@@ -5,12 +5,10 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.URI;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class MLService {
     private static final HttpClient client = HttpClient.newHttpClient();
-    private static final ObjectMapper mapper = new ObjectMapper();
-    
+
     // Call external ML API (e.g., AWS SageMaker, Azure ML)
     public static String callExternalMLAPI(WeatherResponse weather) {
         try {

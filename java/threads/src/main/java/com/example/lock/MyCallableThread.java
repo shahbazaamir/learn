@@ -6,13 +6,14 @@ import com.example.weather.WeatherResponse;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.Callable;
 import java.util.stream.Collectors;
 
 
-public class MyThread implements Runnable{
+public class MyCallableThread implements Callable<List<WeatherResponse>> {
 
     @Override
-    public void run(){
+    public List<WeatherResponse> call(){
             List<City> c = Arrays.asList(City.values());
             List<WeatherResponse> r = c.parallelStream().map(
                     city -> {
@@ -25,7 +26,7 @@ public class MyThread implements Runnable{
                     }
             ).collect(Collectors.toList());
 
-
+        return r;
             /*
             // ML Integration: Predictive Analytics
             r.forEach(weather -> {

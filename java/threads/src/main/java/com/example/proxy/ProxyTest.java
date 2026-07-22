@@ -1,6 +1,6 @@
 package com.example.proxy;
 
-<<<<<<< HEAD
+
 /**
  * ProxyTest demonstrates all three proxy patterns:
  * <ul>
@@ -12,21 +12,11 @@ package com.example.proxy;
  * Run with:
  * <pre>mvn compile exec:java -Dexec.mainClass="com.example.proxy.ProxyTest"</pre>
  */
-=======
->>>>>>> 0d2ddc6ae2b3bd24abc1135e391cbef7cca59fae
+
 public class ProxyTest {
     
-    public static void main(String[] args) {
-        System.out.println("=== Testing Caching Proxy ===");
-        testCachingProxy();
-        
-        System.out.println("\n=== Testing Security Proxy ===");
-        testSecurityProxy();
-        
-        System.out.println("\n=== Testing Dynamic Proxy ===");
-        testDynamicProxy();
-    }
-    
+
+    /*
     private static void testCachingProxy() {
         DatabaseService proxy = new CachingProxy();
         
@@ -69,4 +59,6 @@ public class ProxyTest {
         loggingProxy.getData("SELECT * FROM logs");
         loggingProxy.saveData("Log entry");
     }
+
+     */
 }

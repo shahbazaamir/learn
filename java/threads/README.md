@@ -4,6 +4,13 @@
 mvn clean compile exec:java -Dexec.mainClass="com.example.lock.LockDemo"
 
 ```
+```shell
+mvn clean compile exec:java -Dexec.mainClass="com.example.completablefuture.CompletableFutureDemo"
+```
+
+```shell
+mvn clean compile exec:java -Dexec.mainClass="com.example.executor.ExecutorDemo"
+```
 
 ```shell
 
