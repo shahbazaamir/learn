@@ -1,0 +1,23 @@
+{
+  "turbine_id": "WT-402B",
+  "timestamp": "2026-07-24T09:50:00Z",
+  "location": {
+    "latitude": 12.9716,
+    "longitude": 77.5946
+  },
+  "metrics": {
+    "wind_speed_ms": 11.4,
+    "wind_direction_deg": 215.0,
+    "rotor_speed_rpm": 14.8,
+    "power_output_kw": 1850.2,
+    "generator_temp_c": 62.5,
+    "vibration_axial_mms2": 1.2,
+    "vibration_radial_mms2": 0.8,
+    "yaw_angle_deg": 210.5
+  },
+  "edge_status": {
+    "anomaly_detected": false,
+    "cpu_usage_pct": 24.1,
+    "signal_strength_dbm": -68
+  }
+}
