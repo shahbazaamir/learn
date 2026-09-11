@@ -12,5 +12,19 @@ public class SimpleExample {
                     System.out.println("Hey");
                 } , e
         );
+
+        CompletableFuture<String> c2 = CompletableFuture.supplyAsync(
+                () -> {
+                    return "hi";
+                } , e
+        );
+
+        CompletableFuture<String> c3 = CompletableFuture.supplyAsync(
+                () -> {
+                    return "Hello";
+                } , e
+        );
+
+
     }
 }

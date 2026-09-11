@@ -37,7 +37,7 @@ public class BankDeadLockExample {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws  Exception{
         BankAccount alice = new BankAccount("Alice's Account", 1000);
         BankAccount bob = new BankAccount("Bob's Account", 2000);
 
@@ -47,7 +47,12 @@ public class BankDeadLockExample {
         // Transaction 2: Bob transfers to Alice at the same time
         Thread tx2 = new Thread(() -> bob.transferFunds(alice, 50), "Tx-Thread-2");
 
+        DeadlockDetector d = new DeadlockDetector();
+        d.start();
+        Thread.sleep(1000);
         tx1.start();
         tx2.start();
     }
+
+
 }

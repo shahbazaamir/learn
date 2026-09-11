@@ -1,3 +1,5 @@
+.env
+test
 tmp
 java/spring-batch/.idea
 java/spring-soap/.idea
@@ -67,3 +69,6 @@ java/chat_system/.idea/
 java/chat_system/target/
 reactjs/chat-system/node_modules/
 reactjs/chat-system/package-lock.json
+reactjs/user/node_modules
+java/websocket_chat_system/target/
+python3/ai/.ipynb_checkpoints/
