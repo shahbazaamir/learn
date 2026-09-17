@@ -24,7 +24,13 @@ source ~/git/airflow/.venv/bin/activate
 uv pip install notebook
 ```
 
-### Run Jupyter Notebook - not working
+### Run Jupyter Notebook  
+
+ - export all 
+ ```shell
+ ../.env/all.txt
+ ```
+ 
 
 ```shell
 
