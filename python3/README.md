@@ -15,7 +15,7 @@ python3 test/array_rotation.py
 ### Activate virtual env if you are using any
 
 ```shell
-source ~/git/airflow/.venv/bin/activate
+source ~/git/learn/.venv/bin/activate
 ```
 
 ### install modules if not available
@@ -37,4 +37,10 @@ uv pip install notebook
 env PYTHONPATH="/Users/zainabfirdaus/git/learn/python3:$PYTHONPATH" jupyter notebook
 
 
+```
+
+
+Run local AI agent
+```shell
+ollama launch opencode --model qwen3:8b
 ```

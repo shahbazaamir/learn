@@ -15,6 +15,8 @@ import AddToCart from './components/AddToCart.jsx';
 import EditProduct from './components/EditProduct.jsx';
 import ProductSearchPage from './pages/ProductSearchPage.jsx';
 import ProductActionsPage from './pages/ProductActionsPage.jsx';
+import VideoPage from './pages/VideoPage.jsx';
+import HLSVideoPage from './pages/HLSVideoPage.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -34,6 +36,8 @@ createRoot(document.getElementById('root')).render(
               <Route path="edit-products" element={<EditProduct />} />
               <Route path="product-search" element={<ProductSearchPage />} />
               <Route path="product-actions" element={<ProductActionsPage />} />
+              <Route path="video" element={<VideoPage />} />
+              <Route path="hls-video" element={<HLSVideoPage />} />
             </Route>
           </Routes>
         </EmployeesProvider>

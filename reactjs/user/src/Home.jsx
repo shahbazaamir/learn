@@ -36,6 +36,12 @@ export default function Home() {
           <Link to="/product-actions" className={pathname.startsWith('/product-actions') ? 'nav-link active' : 'nav-link'}>
             ⚡ useCallback
           </Link>
+          <Link to="/video" className={pathname.startsWith('/video') ? 'nav-link active' : 'nav-link'}>
+            🎬 Video
+          </Link>
+          <Link to="/hls-video" className={pathname.startsWith('/hls-video') ? 'nav-link active' : 'nav-link'}>
+            📡 HLS Video
+          </Link>
         </nav>
       </header>
 
